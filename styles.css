@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-body);
     color: var(--text-main);
@@ -623,4 +627,85 @@ header.top-nav {
     font-weight: 500;
     display: flex;
     align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid-column:nth-child(3) {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .hero-bento, 
+    .about-bento, 
+    .content-grid, 
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    .grid-column[style*="span 2"], 
+    .grid-column:nth-child(3) {
+        grid-column: span 1 !important;
+    }
+    .hero-right.blue-box {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+    .portfolio-text {
+        font-size: 4rem;
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+    .year-text {
+        left: 1.5rem;
+        bottom: 1.5rem;
+        font-size: 2rem;
+    }
+    .tag-cursive {
+        font-size: 2rem;
+    }
+    .tag-tech {
+        font-size: 1rem;
+    }
+    .sticky-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0.5rem;
+        order: 3;
+        flex-wrap: wrap;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    .arrow-box {
+        padding: 1rem;
+    }
+    .photo-overlay h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-text {
+        font-size: 2.5rem;
+    }
+    .stylish-tags {
+        top: 1rem;
+        right: 1rem;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 }
